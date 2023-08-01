@@ -71,12 +71,12 @@ bindings = <
 
 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | PREV| NEXT|  UP | P/P | V_UP |     |
+// |BT_CLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | PREV| NEXT|  UP | P/P | V_UP |     |
 // |      |  0  |  1  |  2  |  3  |  4  |   | HOME| LFT | DOWN| RGT | V_DN |     |
 // |      |  5  |  6  |  7  |  8  |  9  |   | END |     | CAPS| B_UP| B_DN |     |
 //                    |     |     |     |   |     | HOLD|     |
 bindings = <
-   &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_PREVIOUS &kp C_NEXT &kp UP    &kp C_PP     &kp C_VOL_UP  &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_PREVIOUS &kp C_NEXT &kp UP    &kp C_PP     &kp C_VOL_UP  &trans
    &trans     &kp N0       &kp N1       &kp N2       &kp N3       &kp N4         &kp HOME       &kp LEFT   &kp DOWN  &kp RIGHT    &kp C_VOL_DN  &trans
    &trans     &kp N5       &kp N6       &kp N7       &kp N8       &kp N9         &kp END        &none      &kp CAPS  &kp C_BRI_UP &kp C_BRI_DN  &trans
                                         &trans       &none        &trans         &none          &none      &none
