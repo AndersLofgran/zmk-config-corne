@@ -13,6 +13,19 @@
 #define LOWER   1
 #define RAISE   2
 #define GAMING  3
+#define QWERTY  4
+
+/ {
+   combos {
+      compatible = "zmk,combos";
+      combo_qwerty {
+         timeout-ms = <50>;
+         layers = <0 3>;
+         key-positions = <36 41>;
+         bindings = <&tog 4>;
+      };
+   };
+};
 
 / {
 
@@ -63,19 +76,31 @@ bindings = <
 
 gaming_layer {
 // -----------------------------------------------------------------------------------------
-// |  X  | ESC  |  Q  |  W  |  E  |  R  |   |     |     |     |     |     |     |
-// |  Y  | SHFT |  A  |  S  |  D  |  F  |   |     |     |     |     |     |     |
-// |  Z  | CTRL |  4  |  3  |  2  |  V  |   |     |     |     |     |     |     |
+// |  X  | ESC  |  5  |  W  |  6  |  7  |   |     |     |     |     |     |     |
+// |  Y  | SHFT |  A  |  S  |  D  |  8  |   |     |     |     |     |     |     |
+// |  Z  | CTRL |  4  |  3  |  2  |  9  |   |     |     |     |     |     |     |
 //                    | TAB |  1  |SPACE|   | GUI |     |BASE |
-
 bindings = <
-   &kp X  &kp ESC    &kp Q  &kp W  &kp E  &kp R    &none    &none &none &none &none &none
-   &kp Y  &kp LSHFT  &kp A  &kp S  &kp D  &kp F    &none    &none &none &none &none &none
-   &kp Z  &kp LCTRL  &kp N4 &kp N3 &kp N2 &kp V    &none    &none &none &none &none &none
+   &kp X  &kp ESC    &kp 5  &kp W  &kp 6  &kp 7    &none    &none &none &none &none &none
+   &kp Y  &kp LSHFT  &kp A  &kp S  &kp D  &kp 8    &none    &none &none &none &none &none
+   &kp Z  &kp LCTRL  &kp N4 &kp N3 &kp N2 &kp 9    &none    &none &none &none &none &none
                      &kp TAB  &kp N1  &kp SPACE    &kp LGUI &none &tog 3
+>;
+};
+
+qwerty_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | DEL |
+// | ENTER|  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;: | BKSP|
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,< |  .> |  /? | TAB |
+//                    | ALT | LWR | SHFT|   | SPC | RSE | GUI |
+bindings = <
+   &kp ESC    &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I     &kp O   &kp P     &kp DEL
+   &kp RETURN &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K     &kp L   &kp SEMI  &kp BACKSPACE
+   &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp COMMA &kp DOT &kp FSLH  &kp TAB
+                  &kp RALT  &mo 1 &kp LSHFT    &kp SPACE &mo 2 &kp LGUI
 >;
 };
 
 };
 };
-
