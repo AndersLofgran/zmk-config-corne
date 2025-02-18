@@ -20,7 +20,7 @@
       compatible = "zmk,combos";
       combo_qwerty {
          timeout-ms = <50>;
-         layers = <0 3>;
+         layers = <0 3 4>;
          key-positions = <36 41>;
          bindings = <&tog 4>;
       };
